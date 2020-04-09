@@ -1,0 +1,32 @@
+body{
+    background-color: rgb(255, 255, 255);
+}
+
+
+.container {
+    margin-left: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.image{
+    width: 85%;
+    
+}
+.GraphTitle{
+    font-weight: 700 !important;
+    font-size: 1rem !important;
+    margin: 0 0 2% 0 !important;
+}
+
+@media(max-width: 770px){
+    .container{
+        margin:0 10%;
+    }
+
+    .image{
+        width: 100%;
+    }
+}

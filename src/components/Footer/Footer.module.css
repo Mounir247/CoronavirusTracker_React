@@ -1,0 +1,12 @@
+.FooterContainer{
+    width: 100%;
+    margin: 5% 0 3% 0 !important;
+    border-top: 1px solid rgb(129, 129, 129);
+    text-align: center;
+    padding-top: 15px;
+    font-size: 0.2rem;
+}
+.FooterContainer a{
+    text-decoration: none;
+    color: #4d65a0;
+}

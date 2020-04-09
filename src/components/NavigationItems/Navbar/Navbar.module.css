@@ -1,0 +1,29 @@
+.Toolbar .NavTitle{
+    margin: 3%;
+    font-weight: 700;
+    font-size: 1.2rem;
+
+}
+
+.Toolbar a{
+  
+   border-radius: 15px;
+   font-size: 1.1rem;
+   font-weight: 700;
+   text-decoration: none;
+   color: #334571;
+}
+.Toolbar a:hover{
+    color: #000;
+}
+
+
+@media(max-width: 500px) {
+   
+    .Toolbar .NavTitle{
+        margin-left: 3%;
+        font-weight: 700;
+        font-size: 1rem;
+    
+    }
+}

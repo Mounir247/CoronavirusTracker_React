@@ -1,26 +1,48 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import {Cards, Chart, CountryPicker} from './components'
+import Footer from './components/Footer/Footer'
+import ResponsiveDrawer from './components/NavigationItems/Navbar/Navbar'
+import styles from './App.module.css'
+import {fetchData} from './api'
+import covidImg from './images/covidImg.jpg'
+import {Typography} from '@material-ui/core'
+class App extends React.Component{
+    state = {
+        data: {},
+        country:'',
+    }
+    async componentDidMount(){
+        const fetchedData = await fetchData();
+        this.setState({data: fetchedData})
+    }
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    handleCountryChange = async (country)=>{
+        const fetchedData = await fetchData(country);
+
+        this.setState({data: fetchedData, country: country})
+
+        
+    }
+
+    render() {
+        const { data, country } = this.state;
+        return (
+            <div>
+                <ResponsiveDrawer/>
+            
+            <div className={styles.container}>
+                
+                <img src={covidImg} className={styles.image} alt="COVID-19"/>
+               <Cards data={data} />
+               <CountryPicker handleCountryChange={this.handleCountryChange}/>
+               <Typography variant="h6" className={styles.GraphTitle}>Graphique de Progression :</Typography>
+               <Chart data={data} country={country}/>
+               <Footer/>
+            </div>
+            </div>
+        )
+    }
 }
+
 
 export default App;

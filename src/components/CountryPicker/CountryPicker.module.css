@@ -1,0 +1,17 @@
+.formControl{
+    text-align: center;
+    width: 70%;
+    margin-bottom: 30px !important;
+   
+}
+
+.formControl .CountryTitle{
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin: 3% 0;
+  
+}
+
+.SelectMain{
+    background-color: rgb(236, 233, 233);
+}
